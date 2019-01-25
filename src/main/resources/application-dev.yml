@@ -1,0 +1,22 @@
+
+#添加thymeleaf配置
+spring:
+  thymeleaf:
+    cache: false
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: utf-8
+    mode: HTML
+    prefix: classpath:/static/page/
+    suffix: .html
+  devtools:
+    restart:
+      enabled: true
+#      additional-paths: src/main/java
+
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: PT1M
