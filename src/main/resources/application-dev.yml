@@ -1,6 +1,12 @@
 
 #添加thymeleaf配置
 spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/sunny_fream
   thymeleaf:
     cache: false
     servlet:
@@ -20,3 +26,12 @@ server:
   servlet:
     session:
       timeout: PT1M
+
+
+#mybatis:
+#  typeAliasesPackage: com.sunny.sunnyfream.model
+#  mapper-locations: classpath:mappers/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    default-fetch-size: 100
+#    default-statement-timeout: 3000
