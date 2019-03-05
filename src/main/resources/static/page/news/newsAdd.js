@@ -21,6 +21,12 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
             $('.thumbBox').css("background","#fff");
         }
     });
+    var laydate = layui.laydate;
+
+    //执行一个laydate实例
+    laydate.render({
+        elem: '#lxsj' //指定元素
+    });
 
     //格式化时间
     function filterTime(val){
