@@ -14,7 +14,7 @@ spring:
     enabled: true
     encoding: utf-8
     mode: HTML
-    prefix: classpath:/static/page/
+    prefix: classpath:/templates/
     suffix: .html
   devtools:
     restart:

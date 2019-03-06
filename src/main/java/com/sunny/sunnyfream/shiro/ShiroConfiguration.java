@@ -41,34 +41,32 @@ public class ShiroConfiguration {
 
         shiroFilterFactoryBean.setSecurityManager(securityManager);
 
-        shiroFilterFactoryBean.setLoginUrl("/to_login");
+        shiroFilterFactoryBean.setLoginUrl("/");
 
-        shiroFilterFactoryBean.setSuccessUrl("/");
+        shiroFilterFactoryBean.setSuccessUrl("/index");
 
         shiroFilterFactoryBean.setUnauthorizedUrl("/unauthorized");
 
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
-        /*filterChainDefinitionMap.put("/index", "authc");
+        filterChainDefinitionMap.put("/to_main", "authc");
+        filterChainDefinitionMap.put("/index", "authc");
         filterChainDefinitionMap.put("/", "anon");
-        filterChainDefinitionMap.put("/user/*", "anon");
-        //这个接口不需要身份认证（登录）
+//        filterChainDefinitionMap.put("/user/*", "anon");
+//        //这个接口不需要身份认证（登录）
         filterChainDefinitionMap.put("/login", "anon");
-        //需要权限的接口
-        filterChainDefinitionMap.put("/admin", "roles[admin]");
-        //具有edit权限才能够访问
-        filterChainDefinitionMap.put("/edit", "perms[edit]");
+//        //需要权限的接口
+//        filterChainDefinitionMap.put("/admin", "roles[admin]");
+//        //具有edit权限才能够访问
+//        filterChainDefinitionMap.put("/edit", "perms[edit]");
 
         //不需要拦截static开头的请求
-        filterChainDefinitionMap.put("/css/*", "anon");
-        filterChainDefinitionMap.put("/js/*", "anon");
-        filterChainDefinitionMap.put("/images/*", "anon");
-        filterChainDefinitionMap.put("/json/*", "anon");
-        filterChainDefinitionMap.put("/layui/*", "anon");
-        filterChainDefinitionMap.put("/page/*", "anon");
+        filterChainDefinitionMap.put("/getVerifyImg", "anon");
+        filterChainDefinitionMap.put("/static/**", "anon");
 
         //这个必须放到最下面不然他下面的其他权限就不起作用了（一个大坑）
         //其他接口都需要登录
-        filterChainDefinitionMap.put("/**", "user");*/
+//        filterChainDefinitionMap.put("/**", "user");
+        filterChainDefinitionMap.put("/**", "anon");
 
         //从数据库获取
         List<PermissionConfig> list = permissionConfigService.getAllPermission();

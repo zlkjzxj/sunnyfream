@@ -20,20 +20,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 @Controller
 public class IndexController {
     Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 
-    @GetMapping("/to_login")
+    @GetMapping("/")
     public String toLogin() {
-        return "login";
+        return "login2";
     }
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index() {
         return "index";
+    }
+
+    @GetMapping("/to_main")
+    public String toMain() {
+        return "main";
     }
 
 
@@ -49,8 +53,7 @@ public class IndexController {
     public Result<SysUser> login(HttpServletRequest request,
                                  @RequestParam(value = "userName") String userName,
                                  @RequestParam("password") String password,
-                                 @RequestParam("verifyCode") String verifyCode,
-                                 @RequestParam("rememberMe") boolean rememberMe
+                                 @RequestParam("verifyCode") String verifyCode
     ) {
 //        Cookie[] cookies = request.getCookies();
 //        for (Cookie cookie : cookies) {
@@ -58,15 +61,15 @@ public class IndexController {
 //        }
 
         //先判断验证码是否正确
-        HttpSession httpSession = request.getSession();
-        String code = (String) httpSession.getAttribute("verifyCode");
-        if (!code.equals(verifyCode.toUpperCase())) {
-            logger.error("验证码错误");
-            return Result.error(CodeMsg.VERIFYCODE_ERR);
-        }
+//        HttpSession httpSession = request.getSession();
+//        String code = (String) httpSession.getAttribute("verifyCode");
+//        if (!code.equals(verifyCode.toUpperCase())) {
+//            logger.error("验证码错误");
+//            return Result.error(CodeMsg.VERIFYCODE_ERR);
+//        }
 
         //登录验证
-        UsernamePasswordToken token = new UsernamePasswordToken(userName, password, rememberMe);
+        UsernamePasswordToken token = new UsernamePasswordToken(userName, password);
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(token);

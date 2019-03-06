@@ -1,15 +1,15 @@
 package com.sunny.sunnyfream.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * @Description TODO
  * @Author sunny
  * Date 2019\1\28 0028 17:33
  */
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PermissionConfig {
     private String id;
     private String url;
