@@ -1,7 +1,7 @@
 package com.sunny.sunnyfream.fream.controller;
 
 import com.sunny.sunnyfream.exception.GlobalException;
-import com.sunny.sunnyfream.model.SysUser;
+import com.sunny.sunnyfream.fream.model.SysUser;
 import com.sunny.sunnyfream.result.CodeMsg;
 import com.sunny.sunnyfream.result.Result;
 import org.apache.shiro.SecurityUtils;

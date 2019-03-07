@@ -1,6 +1,6 @@
-package com.sunny.sunnyfream.vo;
+package com.sunny.sunnyfream.fream.vo;
 
-import com.sunny.sunnyfream.model.Menu;
+import com.sunny.sunnyfream.fream.model.Menu;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

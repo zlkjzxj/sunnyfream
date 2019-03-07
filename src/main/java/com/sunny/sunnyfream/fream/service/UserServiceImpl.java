@@ -1,7 +1,7 @@
-package com.sunny.sunnyfream.service;
+package com.sunny.sunnyfream.fream.service;
 
 import com.sunny.sunnyfream.mapper.SysUserMapper;
-import com.sunny.sunnyfream.model.SysUser;
+import com.sunny.sunnyfream.fream.model.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

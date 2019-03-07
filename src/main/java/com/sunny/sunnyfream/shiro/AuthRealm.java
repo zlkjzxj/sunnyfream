@@ -1,9 +1,9 @@
 package com.sunny.sunnyfream.shiro;
 
-import com.sunny.sunnyfream.model.Permission;
-import com.sunny.sunnyfream.model.Role;
-import com.sunny.sunnyfream.model.SysUser;
-import com.sunny.sunnyfream.service.UserService;
+import com.sunny.sunnyfream.fream.model.PermissionGroup;
+import com.sunny.sunnyfream.fream.model.Role;
+import com.sunny.sunnyfream.fream.model.SysUser;
+import com.sunny.sunnyfream.fream.service.UserService;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -39,11 +39,11 @@ public class AuthRealm extends AuthorizingRealm {
         Set<Role> roleSet = user.getRoles();
         if (CollectionUtils.isNotEmpty(roleSet)) {
             for (Role role : roleSet) {
-                roleNameList.add(role.getRname());
-                Set<Permission> permissionSet = role.getPermissions();
+                roleNameList.add(role.getName());
+                Set<PermissionGroup> permissionSet = role.getPermissions();
                 if (CollectionUtils.isNotEmpty(permissionSet)) {
-                    for (Permission permission : permissionSet) {
-                        permissionList.add(permission.getPname());
+                    for (PermissionGroup permission : permissionSet) {
+                        permissionList.add(permission.getName());
                     }
                 }
             }
@@ -62,7 +62,7 @@ public class AuthRealm extends AuthorizingRealm {
         UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;
         String userName = usernamePasswordToken.getUsername();
 //        SysUser user = userService.findByName(userName);
-        SysUser user = new SysUser(1, "admin", "111111", null);
+        SysUser user = new SysUser(11111L, "admin", "111111");
         if (user != null) {
             return new SimpleAuthenticationInfo(user, user.getPassword(), this.getClass().getName());
         }

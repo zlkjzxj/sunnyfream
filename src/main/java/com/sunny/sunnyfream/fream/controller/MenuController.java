@@ -1,7 +1,7 @@
 package com.sunny.sunnyfream.fream.controller;
 
-import com.sunny.sunnyfream.model.Menu;
-import com.sunny.sunnyfream.vo.MenuVo;
+import com.sunny.sunnyfream.fream.model.Menu;
+import com.sunny.sunnyfream.fream.vo.MenuVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,7 +25,6 @@ public class MenuController {
 			"href": "page/news/newsList.html",
 			"spread": false
         * */
-
         List<Menu> list = new ArrayList<>();
         Menu menu = new Menu("文章列表", "icon-text", "/toNewsList", false, null);
         Menu menu2 = new Menu("用户管理", "icon-text", "/toNewsList", false, null);

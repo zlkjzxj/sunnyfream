@@ -1,8 +1,8 @@
 package com.sunny.sunnyfream.shiro;
 
 
-import com.sunny.sunnyfream.model.PermissionConfig;
-import com.sunny.sunnyfream.service.PermissionConfigService;
+import com.sunny.sunnyfream.fream.model.RolePermission;
+import com.sunny.sunnyfream.fream.service.PermissionConfigService;
 import org.apache.shiro.cache.MemoryConstrainedCacheManager;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
@@ -19,10 +19,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.servlet.Filter;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author sunny
@@ -69,11 +67,11 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/**", "anon");
 
         //从数据库获取
-        List<PermissionConfig> list = permissionConfigService.getAllPermission();
+        List<RolePermission> list = permissionConfigService.getAllPermission();
 
-        for (PermissionConfig sysPermissionInit : list) {
-            filterChainDefinitionMap.put(sysPermissionInit.getUrl(),
-                    sysPermissionInit.getPermission());
+        for (RolePermission sysPermissionInit : list) {
+            filterChainDefinitionMap.put(sysPermissionInit.getPid(),
+                    sysPermissionInit.getRid());
         }
 
         shiroFilterFactoryBean

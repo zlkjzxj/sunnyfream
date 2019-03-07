@@ -1,6 +1,6 @@
 package com.sunny.sunnyfream.mapper;
 
-import com.sunny.sunnyfream.model.SysUser;
+import com.sunny.sunnyfream.fream.model.SysUser;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
-package com.sunny.sunnyfream.service;
+package com.sunny.sunnyfream.fream.service;
 
 import com.sunny.sunnyfream.mapper.PermissionConfigMapper;
-import com.sunny.sunnyfream.model.PermissionConfig;
+import com.sunny.sunnyfream.fream.model.RolePermission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ public class PermissionConfigServiceImpl implements PermissionConfigService {
     private PermissionConfigMapper permissionConfigMapper;
 
     @Override
-    public List<PermissionConfig> getAllPermission() {
+    public List<RolePermission> getAllPermission() {
         return permissionConfigMapper.getAllPermission();
     }
 }

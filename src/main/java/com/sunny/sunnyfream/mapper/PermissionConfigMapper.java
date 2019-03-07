@@ -1,6 +1,6 @@
 package com.sunny.sunnyfream.mapper;
 
-import com.sunny.sunnyfream.model.PermissionConfig;
+import com.sunny.sunnyfream.fream.model.RolePermission;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
@@ -14,5 +14,5 @@ import java.util.List;
 @Component
 public interface PermissionConfigMapper {
     @Select("select * from permission_config order by sort")
-    List<PermissionConfig> getAllPermission();
+    List<RolePermission> getAllPermission();
 }
