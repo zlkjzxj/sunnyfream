@@ -84,3 +84,13 @@ CREATE TABLE permission_role (
 # )
 #   ENGINE = InnoDB
 #   DEFAULT CHARSET = utf8;
+
+#部门表
+CREATE TABLE user_role (
+  uid INT(11) NOT NULL,
+  pid INT(11) NOT NULL,
+  KEY idx_uid (uid),
+  KEY idx_Pid (pid)
+)
+  ENGINE = INNODB
+  DEFAULT CHARSET = utf8;

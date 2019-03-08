@@ -27,8 +27,14 @@ public class SysUser implements Serializable {
      * 用户登录密码
      */
     private String password;
-
+    /**
+     * 部门编号
+     */
     private String bmdh;
+    /**
+     * 职务
+     */
+    private String zw;
     /**
      * 用户密码过期，重新设置
      */

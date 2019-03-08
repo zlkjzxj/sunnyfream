@@ -67,12 +67,12 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/**", "anon");
 
         //从数据库获取
-        List<RolePermission> list = permissionConfigService.getAllPermission();
-
-        for (RolePermission sysPermissionInit : list) {
-            filterChainDefinitionMap.put(sysPermissionInit.getPid(),
-                    sysPermissionInit.getRid());
-        }
+//        List<RolePermission> list = permissionConfigService.getAllPermission();
+//
+//        for (RolePermission sysPermissionInit : list) {
+//            filterChainDefinitionMap.put(sysPermissionInit.getPid(),
+//                    sysPermissionInit.getRid());
+//        }
 
         shiroFilterFactoryBean
                 .setFilterChainDefinitionMap(filterChainDefinitionMap);

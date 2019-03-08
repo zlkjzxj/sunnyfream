@@ -16,8 +16,8 @@ import java.util.List;
 @NoArgsConstructor
 public class Menu {
     private String id;
-    private String name;
-    private String url;
+    private String title;
+    private String href;
     private String icon;
     private Integer order;
     private Integer view;
@@ -28,9 +28,9 @@ public class Menu {
     private boolean spread;
     private List<Menu> children;
 
-    public Menu(String name, String url, String icon, boolean spread, List<Menu> children) {
-        this.name = name;
-        this.url = url;
+    public Menu(String title, String icon, String href, boolean spread, List<Menu> children) {
+        this.title = title;
+        this.href = href;
         this.icon = icon;
         this.spread = spread;
         this.children = children;

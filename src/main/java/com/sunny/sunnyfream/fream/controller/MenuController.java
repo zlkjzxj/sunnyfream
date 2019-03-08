@@ -19,16 +19,11 @@ public class MenuController {
     @RequestMapping("/getMenu")
     @ResponseBody
     public MenuVo getMenu() {
-        /*
-        * "title": "文章列表",
-			"icon": "icon-text",
-			"href": "page/news/newsList.html",
-			"spread": false
-        * */
+
         List<Menu> list = new ArrayList<>();
-        Menu menu = new Menu("文章列表", "icon-text", "/toNewsList", false, null);
-        Menu menu2 = new Menu("用户管理", "icon-text", "/toNewsList", false, null);
-        Menu menu3 = new Menu("部门管理", "icon-text", "/toNewsList", false, null);
+        Menu menu = new Menu("项目列表", "icon-text", "/toProjectList", false, null);
+        Menu menu2 = new Menu("用户管理", "icon-user", "/toUserList", false, null);
+        Menu menu3 = new Menu("部门管理", "icon-text", "/toDepList", false, null);
         List<Menu> list1 = new ArrayList<>();
         list1.add(menu2);
         list1.add(menu3);
