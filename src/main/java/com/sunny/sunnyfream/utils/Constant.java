@@ -1,6 +1,7 @@
 package com.sunny.sunnyfream.utils;
 
 import com.sunny.sunnyfream.business.model.Project;
+import com.sunny.sunnyfream.fream.model.DepTree;
 import com.sunny.sunnyfream.fream.model.Department;
 import com.sunny.sunnyfream.fream.model.SysUser;
 
@@ -17,4 +18,5 @@ public class Constant {
     public static final List<Project> PROJECT_LIST = new ArrayList<>();
     public static final List<SysUser> USER_LIST = new ArrayList<>();
     public static final List<Department> DEP_LIST = new ArrayList<>();
+    public static final List<DepTree> DEPTREE_LIST = new ArrayList<>();
 }

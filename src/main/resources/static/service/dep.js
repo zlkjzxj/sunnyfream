@@ -1,3 +1,4 @@
+/*
 layui.config({
     base: '../../static/layui/'
 }).extend({
@@ -22,7 +23,7 @@ layui.config({
             {type: 'numbers'},
             {field: 'bmmc', minWidth: 200, title: '部门名称'},
             {field: 'bmbh', minWidth: 200, title: '部门编号'},
-            {field: 'bmjb', title: '部门级别'},
+            // {field: 'bmjb', title: '部门级别'},
             // {field: 'orderNumber', width: 80, align: 'center', title: '排序号'},
             // {
             //     field: 'isMenu', width: 80, align: 'center', templet: function (d) {
@@ -39,7 +40,7 @@ layui.config({
             {templet: '#auth-state', width: 120, align: 'center', title: '操作'}
         ]],
         done: function () {
-            // layer.closeAll('loading');
+            layer.closeAll('loading');
         }
     });
 
@@ -50,4 +51,43 @@ layui.config({
     $('#btn-fold').click(function () {
         treetable.foldAll('#auth-table');
     });
+});*/
+
+layui.use(['form', 'tree', 'layer'], function () {
+    var $ = layui.jquery;
+    layui.tree({
+        elem: '#depTree',
+        nodes: createTree(),
+        click: function (node) {
+            editDep(node);
+        }
+    })
+    ;
+
+    function createTree() {
+        var nodes = "";
+        $.ajax({
+            url: '/dep',
+            method: 'GET',
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                console.log(data.data)
+                nodes = data.data;
+            },
+            error: function (e) {
+                // top.layer.close(index);
+                top.layer.msg("用户添加失败！");
+            }
+        })
+        return nodes;
+    }
+
+    function editDep(node) {
+        $("#bmmc").val(node.name);
+        $("#bmbh").val(node.bmbh);
+        $("#bmjb").val(node.bmjb);
+    }
 });
+
+

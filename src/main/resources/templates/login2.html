@@ -25,17 +25,17 @@
     <div class="layui-form-item input-item">
         <label for="userName">用户名</label>
         <input type="text" placeholder="请输入用户名" id="userName" class="layui-input"
-               lay-verify="required" required="true">
+               lay-verify="required" required="true" th:value="admin">
     </div>
     <div class="layui-form-item input-item">
         <label for="password">密码</label>
         <input type="password" placeholder="请输入密码" id="password" class="layui-input"
-               lay-verify="required" required="true">
+               lay-verify="required" required="true" th:value="111111">
     </div>
     <div class="layui-form-item input-item" id="imgCode">
         <label>验证码</label>
         <input type="text" id="verifyCode" placeholder="请输入验证码" autocomplete="off" class="layui-input"
-               lay-verify="required" required="true">
+               lay-verify="required" required="true" th:value="xxxx">
         <img src="/getVerifyImg" id="verifyImg" onclick="this.src='/getVerifyImg?d='+new Date()*1">
     </div>
     <div class="layui-form-item" style="margin-bottom: 20px;">

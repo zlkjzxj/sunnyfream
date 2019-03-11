@@ -11,26 +11,82 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="../../static/layui/css/layui.css" media="all"/>
     <link rel="stylesheet" href="../../static/css/public.css" media="all"/>
+    <style>
+        .layui-form-label {
+            width: 100px;
+        }
+
+        .layui-input-block {
+            margin-left: 130px;
+            min-height: 36px
+        }
+    </style>
 </head>
-<body>
-<!--<div class="layui-container">-->
-<!--<br><br>-->
-<!--<a class="layui-btn layui-btn-normal" href="index.html">&lt;&lt;返回</a>-->
-<!--&nbsp;&nbsp;-->
-<!--<div class="layui-btn-group">-->
-<!--<button class="layui-btn" id="btn-expand">全部展开</button>-->
-<!--<button class="layui-btn" id="btn-fold">全部折叠</button>-->
-<!--</div>-->
 
-<table id="auth-table" class="layui-table" lay-filter="auth-table"></table>
-<!--</div>-->
-<!--&lt;!&ndash; 操作列 &ndash;&gt;-->
-<!--<script type="text/html" id="auth-state">-->
-<!--<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>-->
-<!--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>-->
-<!--</script>-->
-
+<body class="childrenBody" style="background-color: #f1f4f5">
+<!--<table id="auth-table" class="layui-table" lay-filter="auth-table"></table>-->
+<div class="layui-row layui-col-space10">
+    <div class="layui-col-md2">
+        <div id="depTree" style="background-color: #ffffff;border-radius: 10px;height: 750px;padding-top: 10px"></div>
+    </div>
+    <div class="layui-col-md10">
+        <div style="background-color: #ffffff;border-radius: 10px;height: 750px;padding-top: 10px">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <div class="magb15 layui-col-md6 layui-col-xs12">
+                        <label class="layui-form-label">部门名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" id="bmmc" name="bmmc" class="layui-input userName"
+                                   lay-verify="required"
+                                   placeholder="请输入部门名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="magb15 layui-col-md6 layui-col-xs10">
+                        <label class="layui-form-label">部门编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" id="bmbh" name="bmbh" class="layui-input userName"
+                                   lay-verify="required"
+                                   placeholder="请按公司部门规则输入">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">部门级别</label>
+                    <div class="layui-input-block">
+                        <select name="bmjb">
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                            <option value="0">0</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">职务</label>
+                    <div class="layui-input-block">
+                        <select name="zw">
+                            <option value="0">职员</option>
+                            <option value="1">主管</option>
+                            <option value="2">部门经理</option>
+                            <option value="3">总经理</option>
+                            <option value="4">董事长</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row layui-col-lg12">
+                    <div class="layui-input-block">
+                        <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addUser">立即添加</button>
+                        <button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
 <script type="text/javascript" src="../../static/layui/layui.js"></script>
 <script type="text/javascript" src="../../static/service/dep.js"></script>
-</body>
 </html>
