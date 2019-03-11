@@ -31,7 +31,7 @@ public class DepController {
 //        return "user/userAdd";
 //    }
 
-    @RequestMapping(value = "/dep", method = RequestMethod.GET)
+   /* @RequestMapping(value = "/dep", method = RequestMethod.GET)
     @ResponseBody
     public PageResult getUserList() {
         Constant.DEPTREE_LIST.clear();
@@ -60,8 +60,8 @@ public class DepController {
         DepTree dep = new DepTree("总经理", list, "", "1");
         Constant.DEPTREE_LIST.add(dep);
         return PageResult.success(Constant.DEPTREE_LIST);
-    }
-   /* @RequestMapping(value = "/dep", method = RequestMethod.GET)
+    }*/
+    @RequestMapping(value = "/dep", method = RequestMethod.GET)
     @ResponseBody
     public PageResult getUserList() {
         Constant.DEP_LIST.clear();
@@ -84,7 +84,7 @@ public class DepController {
         Constant.DEP_LIST.add(department7);
         Constant.DEP_LIST.add(department8);
         return PageResult.success(Constant.DEP_LIST);
-    }*/
+    }
 //
 //    @RequestMapping(value = "/user", method = RequestMethod.POST)
 //    @ResponseBody

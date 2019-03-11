@@ -1,4 +1,3 @@
-/*
 layui.config({
     base: '../../static/layui/'
 }).extend({
@@ -22,7 +21,8 @@ layui.config({
         cols: [[
             {type: 'numbers'},
             {field: 'bmmc', minWidth: 200, title: '部门名称'},
-            {field: 'bmbh', minWidth: 200, title: '部门编号'},
+            {field: 'bmbh', minWidth: 200, title: '成员数'},
+            {field: 'bmjb', minWidth: 200, title: '主管'},
             // {field: 'bmjb', title: '部门级别'},
             // {field: 'orderNumber', width: 80, align: 'center', title: '排序号'},
             // {
@@ -51,9 +51,9 @@ layui.config({
     $('#btn-fold').click(function () {
         treetable.foldAll('#auth-table');
     });
-});*/
+});
 
-layui.use(['form', 'tree', 'layer'], function () {
+/*layui.use(['form', 'tree', 'layer'], function () {
     var $ = layui.jquery;
     layui.tree({
         elem: '#depTree',
@@ -88,6 +88,6 @@ layui.use(['form', 'tree', 'layer'], function () {
         $("#bmbh").val(node.bmbh);
         $("#bmjb").val(node.bmjb);
     }
-});
+});*/
 
 
